@@ -1,0 +1,91 @@
+
+
+<MyLayout>:
+    do_default_tab:False
+    # tab_pos: 'bottom_mid'
+    tab_width: (root.width / 2) 
+    tab_height: 100
+
+    TabbedPanelItem:
+        text:"Home"
+
+
+        BoxLayout:
+            orientation: "vertical"
+            spacing: 10
+            padding: 20
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint: .8,.4
+                pos_hint: {"center_x":0.5, "center_y":1}
+                Image:
+                    source:"images/bus.png"
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint: .8,.1
+                pos_hint: {"center_x":0.5, "center_y":1}
+
+                Label:
+                    text:'From:'
+                    font_size: 32
+
+                Label:
+                    text:'To:'
+                    font_size: 32
+
+            BoxLayout:
+                orientation: "horizontal"
+                pos_hint: {"center_x":0.5, "center_y":1}
+                # spacing: 100
+                # padding: 100
+                size_hint: 0.8, 0.1
+                spacing: 10
+
+                TextInput:
+                    id: _from
+                    hint_text: 'city name'
+                    font_size: 32
+
+                TextInput:
+                    id: _to
+                    hint_text: 'city name'
+                    font_size: 32
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint: 0.8, 0.2
+                spacing: 20
+                padding: 0
+                pos_hint: {"center_x":0.5, "center_y":0.5}
+
+                Button:
+                    
+                    text: 'Search'
+                    font_size: 32
+                    on_press: root.search_fxn()
+                Button:
+                    
+                    text: "Insert"
+                    size_hint: 0.5, 0.5
+                    font_size: 32
+                    pos_hint: {"center_x":0.5, "center_y":0.5}
+                    on_press: root.insert_data()
+
+
+
+
+
+
+
+
+    TabbedPanelItem:
+        text:"Info"
+        BoxLayout:
+            orientation: "vertical"
+
+            Label:
+                id: _data
+                text:""
+                font_size: 40
