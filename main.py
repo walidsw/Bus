@@ -12,7 +12,6 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 #Done
 
-Window.size = (800, 1000)
 
 class MyLayout(TabbedPanel):
     def __init__(self,**kwargs):
